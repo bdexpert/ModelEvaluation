@@ -1,4 +1,4 @@
-# Model Evaluation using Personal Activity Data
+# Model Evaluation Using Personal Activity Data
 This is a shiny app that accepts a particular model as input and evaluates the model's accuracy. The user has the option of choosing one among multiple models.
 
 Exercise activity is monitored using sensors on arms and belts and the data gathered is analyzed and used for predictions. 
