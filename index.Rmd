@@ -1,0 +1,135 @@
+---
+title       : Model Evaluation on Personal Activity Data
+subtitle    : Coursera Data developing Products Course
+author      : Created By Deepak on Aug 15th, 2015
+
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+url: 
+  assets: /assets
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+
+## Synopsis
+ 
+ 
+ 
+ 
+- Jawbone, Nike, Fitbit enable collection of personal activity data
+
+- Measure how much of a particular activity is carried out
+
+- Do we measure how well these activities are carried out?
+
+- 'How well' provides useful information for personal health & sports training
+
+- App at: https://bdexpert.shinyapps.io/ModelEvaluation 
+
+--- .class #id 
+
+
+## Model
+ 
+
+- User selects a model to evaluate
+
+- App outputs the model's accuracy
+
+- Compare output of multiple models easily by selecting the desired model
+
+- Original Dataset consists of 19622 obs and 134 variables
+
+- Final dataset consisted of 52 predictors and 1 response
+
+- Model evaluated on training and cross validation data
+
+- Model Options
+ - LDA
+ - QDA
+ - KNN
+ - Classification Trees
+
+--- .class #id 
+
+
+
+
+## Dendogram for Classification Trees
+
+```{r echo=FALSE, results='hide'}
+library(caret)
+library(rpart.plot)
+library(rpart)
+library(curl)
+library(ggplot2)
+library(lattice)
+```
+
+```{r echo=FALSE}
+## Input Data
+training_url = "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+training_file = "pml-training.csv"
+if (!file.exists(training_file)){download.file(url=training_url, destfile=training_file, method="curl")}
+
+testing_url = "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
+testing_file = "pml-testing.csv"
+if (!file.exists(testing_file)) {download.file(url=testing_url, destfile=testing_file, method="curl")}
+
+# Import the data and convert blanks and DIV errors as NA.
+train = read.csv("pml-training.csv", na.strings=c('NA','','#DIV/0!'), header=TRUE)
+train_cols = colnames(train)
+test = read.csv("pml-testing.csv", na.strings=c('NA','','#DIV/0!'), header=TRUE)
+test_cols = colnames(test)
+
+# Verify that the column names (excluding classe and problem_id) are identical in the training and test set.
+#all.equal(train_cols[1:length(train_cols)-1], test_cols[1:length(test_cols)-1])
+
+
+#Remove NA columns from training and test dataset
+
+NAindex = apply(train,2,function(x) {sum(is.na(x))}) 
+trainNA = train[,which(NAindex == 0)]
+testNA = test[,which(NAindex == 0)]
+
+train_cols = colnames(trainNA)
+test_cols = colnames(testNA)
+#all.equal(train_cols[1:length(train_cols)-1], test_cols[1:length(test_cols)-1])
+
+#Remove unnecessary columns like timestamps, usernames, etc
+trainNA = trainNA[,8:length(names(trainNA))]
+testNA = testNA[,8:length(names(testNA))]
+
+#center and scale the variables
+preproc = preProcess(trainNA[,-53],method=c('center', 'scale'))
+trainproc = predict(preproc, trainNA[,-53])
+trainproc$classe = trainNA$classe
+
+testproc = predict(preproc,testNA[,-53])
+
+#Create a validation set out of the training set in a 60%-40% ratio.
+set.seed(12031987)
+
+inTrain = createDataPartition(trainproc$classe, p = 0.6, list=FALSE)
+training = trainproc[inTrain,]
+crossValidation = trainproc[-inTrain,]
+
+modFittree <- train(classe ~ ., data = training, method="rpart")
+predtree = predict(modFittree, newdata=crossValidation)
+
+rpart.plot(modFittree$finalModel)
+```
+
+
+--- .class #id 
+
+## Confusion Matrix Output for Classification Trees
+
+
+```{r echo=FALSE}
+print(confusionMatrix(predtree, crossValidation$classe), digits=4)
+```
