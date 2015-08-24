@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Model Evaluation by bdexpert</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Model Evaluation</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/bdexpert/ModelEvaluation" class="btn">View on GitHub</a>
+      <a href="https://github.com/bdexpert/ModelEvaluation/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/bdexpert/ModelEvaluation/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p>&lt;!DOCTYPE html&gt;
+
+</p>
+  Model Evaluation on Personal Activity Data
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   &lt;!-- This amazingness opens all links in a new tab. --&gt;  
+
+<p>&lt;!-- Grab CDN jQuery, fall back to local if offline --&gt;
+  
+   
+  </p>
+
+<p>
+</p>
+  
+
+<pre><code>&lt;!-- LOGO SLIDE --&gt;
+    &lt;slide class="title-slide segue nobackground"&gt;
+</code></pre>
+
+<p> 
+    <h1>
+<a id="model-evaluation-on-personal-activity-data" class="anchor" href="#model-evaluation-on-personal-activity-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Evaluation on Personal Activity Data</h1>
+    <h2>
+<a id="coursera-data-developing-products-course" class="anchor" href="#coursera-data-developing-products-course" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coursera Data developing Products Course</h2>
+    <p>Created By Deepak on Aug 15th, 2015<br></p>
+   
+   <br>
+</p>
+
+<pre><code>&lt;!-- SLIDES --&gt;
+&lt;slide class="" id="slide-1" style="background:;"&gt;
+</code></pre>
+
+<p> 
+    <h2>
+<a id="synopsis" class="anchor" href="#synopsis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Synopsis</h2>
+   
+   
+    <ul>
+<li><p>Jawbone, Nike, Fitbit enable collection of personal activity data</p></li>
+<li><p>Measure how much of a particular activity is carried out</p></li>
+<li><p>Do we measure how well these activities are carried out?</p></li>
+<li><p>'How well' provides useful information for personal health &amp; sports training</p></li>
+<li><p>App at: <a href="https://bdexpert.shinyapps.io/ModelEvaluation"></a><a href="https://bdexpert.shinyapps.io/ModelEvaluation">https://bdexpert.shinyapps.io/ModelEvaluation</a> </p></li>
+</ul> </p>
+
+<p>
+  &lt;!-- Presenter Notes --&gt;
+</p>
+
+<p>
+   
+    <h2>
+<a id="model" class="anchor" href="#model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model</h2>
+   
+   
+    <ul>
+<li><p>User selects a model to evaluate</p></li>
+<li><p>App outputs the model's accuracy</p></li>
+<li><p>Compare output of multiple models easily by selecting the desired model</p></li>
+<li><p>Original Dataset consists of 19622 obs and 134 variables</p></li>
+<li><p>Final dataset consisted of 52 predictors and 1 response</p></li>
+<li><p>Model evaluated on training and cross validation data</p></li>
+<li><p>Model Options</p></li>
+</ul> </p>
+
+<ul>
+<li>LDA</li>
+<li>QDA</li>
+<li>KNN</li>
+<li>Classification Trees</li>
+</ul>
+
+
+<p>
+  &lt;!-- Presenter Notes --&gt;
+</p>
+
+<p>
+   
+    <h2>
+<a id="dendogram-for-classification-trees" class="anchor" href="#dendogram-for-classification-trees" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dendogram for Classification Trees</h2>
+   
+   
+    <pre><code>## Loading required package: lattice</code></pre> </p>
+
+<h2>
+<a id="loading-required-package-ggplot2" class="anchor" href="#loading-required-package-ggplot2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loading required package: ggplot2</h2>
+
+<h2>
+<a id="loading-required-package-rpart" class="anchor" href="#loading-required-package-rpart" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loading required package: rpart</h2>
+
+<p></p>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+<p>
+  &lt;!-- Presenter Notes --&gt;
+</p>
+
+<p>
+   
+    <h2>
+<a id="confusion-matrix-output-for-classification-trees" class="anchor" href="#confusion-matrix-output-for-classification-trees" aria-hidden="true"><span class="octicon octicon-link"></span></a>Confusion Matrix Output for Classification Trees</h2>
+   
+   
+    <pre><code>## Confusion Matrix and Statistics</code></pre> </p>
+
+<h2>
+<a id="reference" class="anchor" href="#reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference</h2>
+
+<h2>
+<a id="prediction----a----b----c----d----e" class="anchor" href="#prediction----a----b----c----d----e" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prediction    A    B    C    D    E</h2>
+
+<h2>
+<a id="a-2028--633--603--579--222" class="anchor" href="#a-2028--633--603--579--222" aria-hidden="true"><span class="octicon octicon-link"></span></a>A 2028  633  603  579  222</h2>
+
+<h2>
+<a id="b---41--549---51--220--194" class="anchor" href="#b---41--549---51--220--194" aria-hidden="true"><span class="octicon octicon-link"></span></a>B   41  549   51  220  194</h2>
+
+<h2>
+<a id="c--158--336--714--487--374" class="anchor" href="#c--158--336--714--487--374" aria-hidden="true"><span class="octicon octicon-link"></span></a>C  158  336  714  487  374</h2>
+
+<h2>
+<a id="d----0----0----0----0----0" class="anchor" href="#d----0----0----0----0----0" aria-hidden="true"><span class="octicon octicon-link"></span></a>D    0    0    0    0    0</h2>
+
+<h2>
+<a id="e----5----0----0----0--652" class="anchor" href="#e----5----0----0----0--652" aria-hidden="true"><span class="octicon octicon-link"></span></a>E    5    0    0    0  652</h2>
+
+<h2>
+<a id="overall-statistics" class="anchor" href="#overall-statistics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overall Statistics</h2>
+
+<h2>
+<a id="accuracy--05025" class="anchor" href="#accuracy--05025" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accuracy : 0.5025</h2>
+
+<h2>
+<a id="95-ci--04914-05137" class="anchor" href="#95-ci--04914-05137" aria-hidden="true"><span class="octicon octicon-link"></span></a>95% CI : (0.4914, 0.5137)</h2>
+
+<h2>
+<a id="no-information-rate--02845" class="anchor" href="#no-information-rate--02845" aria-hidden="true"><span class="octicon octicon-link"></span></a>No Information Rate : 0.2845</h2>
+
+<h2>
+<a id="p-value-acc--nir---22e-16" class="anchor" href="#p-value-acc--nir---22e-16" aria-hidden="true"><span class="octicon octicon-link"></span></a>P-Value [Acc &gt; NIR] : &lt; 2.2e-16</h2>
+
+<h2>
+<a id="kappa--03499" class="anchor" href="#kappa--03499" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kappa : 0.3499</h2>
+
+<h2>
+<a id="mcnemars-test-p-value--na" class="anchor" href="#mcnemars-test-p-value--na" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mcnemar's Test P-Value : NA</h2>
+
+<h2>
+<a id="statistics-by-class" class="anchor" href="#statistics-by-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Statistics by Class:</h2>
+
+<h2>
+<a id="class-a-class-b-class-c-class-d-class-e" class="anchor" href="#class-a-class-b-class-c-class-d-class-e" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class: A Class: B Class: C Class: D Class: E</h2>
+
+<h2>
+<a id="sensitivity------------09086--036166---05219---00000--045215" class="anchor" href="#sensitivity------------09086--036166---05219---00000--045215" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sensitivity            0.9086  0.36166   0.5219   0.0000  0.45215</h2>
+
+<h2>
+<a id="specificity------------06372--092004---07908---10000--099922" class="anchor" href="#specificity------------06372--092004---07908---10000--099922" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specificity            0.6372  0.92004   0.7908   1.0000  0.99922</h2>
+
+<h2>
+<a id="pos-pred-value---------04989--052038---03451------nan--099239" class="anchor" href="#pos-pred-value---------04989--052038---03451------nan--099239" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pos Pred Value         0.4989  0.52038   0.3451      NaN  0.99239</h2>
+
+<h2>
+<a id="neg-pred-value---------09460--085731---08868---08361--089011" class="anchor" href="#neg-pred-value---------09460--085731---08868---08361--089011" aria-hidden="true"><span class="octicon octicon-link"></span></a>Neg Pred Value         0.9460  0.85731   0.8868   0.8361  0.89011</h2>
+
+<h2>
+<a id="prevalence-------------02845--019347---01744---01639--018379" class="anchor" href="#prevalence-------------02845--019347---01744---01639--018379" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prevalence             0.2845  0.19347   0.1744   0.1639  0.18379</h2>
+
+<h2>
+<a id="detection-rate---------02585--006997---00910---00000--008310" class="anchor" href="#detection-rate---------02585--006997---00910---00000--008310" aria-hidden="true"><span class="octicon octicon-link"></span></a>Detection Rate         0.2585  0.06997   0.0910   0.0000  0.08310</h2>
+
+<h2>
+<a id="detection-prevalence---05181--013446---02637---00000--008374" class="anchor" href="#detection-prevalence---05181--013446---02637---00000--008374" aria-hidden="true"><span class="octicon octicon-link"></span></a>Detection Prevalence   0.5181  0.13446   0.2637   0.0000  0.08374</h2>
+
+<h2>
+<a id="balanced-accuracy------07729--064085---06564---05000--072568" class="anchor" href="#balanced-accuracy------07729--064085---06564---05000--072568" aria-hidden="true"><span class="octicon octicon-link"></span></a>Balanced Accuracy      0.7729  0.64085   0.6564   0.5000  0.72568</h2>
+
+<p></p>
+
+<p>
+  &lt;!-- Presenter Notes --&gt;
+</p>
+
+<pre><code>&lt;slide class="backdrop"&gt;&lt;/slide&gt;
+</code></pre>
+
+<p></p>
+  <div id="io2012-ptoc">
+    <ul>
+      <li>
+      <a href="#" target="_self" title="Synopsis">
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" title="Model">
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" title="Dendogram for Classification Trees">
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" title="Confusion Matrix Output for Classification Trees">
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  &lt;!--[if IE]&gt;
+    
+    
+  &lt;![endif]--&gt;
+
+  &lt;!-- Load Javascripts for Widgets --&gt;
+
+<p>&lt;!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves &gt;100MB) --&gt;
+  
+  
+  &lt;!--  --&gt;
+  </p>
+
+
+
+<p>
+  
+  &lt;!-- DONE LOADING HIGHLIGHTER JS FILES --&gt;</p>
+
+<p></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/bdexpert/ModelEvaluation">Model Evaluation</a> is maintained by <a href="https://github.com/bdexpert">bdexpert</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
