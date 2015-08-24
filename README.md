@@ -10,3 +10,4 @@ The approach proposed for the Weight Lifting Exercises dataset is to investigate
 The app is available at 
 https://bdexpert.shinyapps.io/ModelEvaluation
 and the slide deck is available at 
+http://rpubs.com/bdexpert/ModelEvaluation
